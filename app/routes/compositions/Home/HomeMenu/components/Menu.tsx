@@ -5,9 +5,10 @@ type MenuItem = {
   Icon: ({ active }: QIconProps) => JSX.Element;
   name: string;
   active: boolean;
+  onClick: () => void;
 };
 
-const Menu = ({Icon, name, active}: MenuItem) => {
+const Menu = ({Icon, name, active, onClick}: MenuItem) => {
   return (
     <Flex
       maxWidth={'fit-content'}
@@ -19,14 +20,14 @@ const Menu = ({Icon, name, active}: MenuItem) => {
       _hover={{
         bgColor: '#181919',
       }}
-      pl={'15px'}
-      pr={'15px'}
+      px={'15px'}
       borderRadius={'50px'}
+      onClick={onClick}
     >
       <Icon active={active}/>
       <Text
         fontSize={{md: "19px"}}
-        fontWeight={{md: 700}}
+        fontWeight={{md: active ? 700 : 500}}
       >{name}</Text>
     </Flex>
   );

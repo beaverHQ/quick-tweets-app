@@ -27,20 +27,20 @@ export default function Index() {
       color={'white'}
     >
       <Flex
-        width={{md: '18vw', lg: '30vw'}}
+        width={{md: '18vw', lg: '26vw'}}
       >
         <HomeMenu />
       </Flex>
       <Flex
-        borderX={'2px'}
+        borderX={'1px'}
         width={{md: '57vw', lg: '40vw'}}
         height={'100vh'}
-        borderColor={'#17191b'}
+        borderColor={'#2F3336'}
       >
         Feed
       </Flex>
       <Flex
-        width={{md: '25vw',lg: '30vw'}}
+        width={{md: '25vw',lg: '34vw'}}
       >
         Highlight
       </Flex>
