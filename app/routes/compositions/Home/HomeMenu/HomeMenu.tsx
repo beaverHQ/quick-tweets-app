@@ -2,7 +2,7 @@ import { Flex } from "@chakra-ui/react"
 
 import MenuList from "./components/MenuList";
 import PostBtn from "./components/Post";
-import BirdCmp from "./components/Bird";
+import XLogoCmp from "./components/XLogo";
 import Spacer from "~/components/ui/Spacer";
 import MenuAccount from "./components/MenuAccount";
 import ChakraSpacer from "~/components/ui/ChakraSpacer";
@@ -16,7 +16,7 @@ const HomeMenu = () => {
       flexDir={'column'}
       pt={''}
     >
-      <BirdCmp />
+      <XLogoCmp />
       <MenuList />
       <Spacer height="10px" />
       <PostBtn />

@@ -14,6 +14,7 @@ const Menu = ({Icon, name, active, onClick}: MenuItem) => {
       maxWidth={'fit-content'}
       h={"50px"}
       gap={"20px"}
+      // border={"1px solid red"}
       alignItems={'center'}
       bgColor={"#000000"}
       cursor={'pointer'}
@@ -26,6 +27,7 @@ const Menu = ({Icon, name, active, onClick}: MenuItem) => {
     >
       <Icon active={active}/>
       <Text
+        display={{base: "none", xl: "flex"}}
         fontSize={{md: "19px"}}
         fontWeight={{md: active ? 700 : 500}}
       >{name}</Text>

@@ -10,7 +10,7 @@ type MenuAccountProps = {
 const MenuAccount = ({avatar, fullname, handle}: MenuAccountProps) => {
   return (
     <Flex
-      width={"255px"}
+      width={{xl: "255px"}}
       height={"69px"}
       borderRadius={'50px'}
       cursor={'pointer'}
@@ -30,10 +30,14 @@ const MenuAccount = ({avatar, fullname, handle}: MenuAccountProps) => {
         borderRadius={"50px"}
         // border={"1px solid red"}
       />
-      <Spacer width="10px" />
+      <Spacer 
+        width="10px"
+        display={{base: "none", xl: "flex"}}
+        />
       <Flex
         flexDirection={"column"}
         fontSize={"16px"}
+        display={{base: "none", xl: "flex"}}
       >
         <Text
           fontWeight={700}
@@ -43,8 +47,11 @@ const MenuAccount = ({avatar, fullname, handle}: MenuAccountProps) => {
           fontWeight={500}
         >@{handle}</Text>
       </Flex>
-      <ChakraSpacer />
+      <ChakraSpacer
+        display={{base: "none", xl: "flex"}}
+      />
       <Text
+        display={{base: "none", xl: "flex"}}
         pt={"5px"}
         fontSize={'20px'}
         fontWeight={500}
