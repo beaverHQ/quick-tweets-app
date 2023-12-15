@@ -3,6 +3,8 @@ import type { LoaderFunctionArgs, MetaFunction } from "@remix-run/node";
 
 
 import HomeMenu from "./compositions/Home/HomeMenu/HomeMenu";
+import Spacer from "~/components/ui/Spacer";
+import HighlightCmp from "./compositions/Home/Highlight/Highlight";
 
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
@@ -22,27 +24,35 @@ export default function Index() {
     <Flex
       w={'full'}
       h={'full'}
-      justifyContent={'space-between'}
       bgColor={"#000000"}
       color={'white'}
     >
       <Flex
-        width={{md: '18vw', lg: '26vw'}}
+        width={{md: '8vw', lg: '15vw', xl: '26vw'}}
+        borderRight={'1px'}
+        borderColor={'#2F3336'}
+        // pl={{base: "0", lg: "30%"}}
+        justifyContent={"end"}
       >
         <HomeMenu />
+        <Spacer width={'10px'} />
       </Flex>
+
       <Flex
-        borderX={'1px'}
-        width={{md: '57vw', lg: '40vw'}}
+        width={"598px"}
         height={'100vh'}
+        borderRight={'1px'}
         borderColor={'#2F3336'}
       >
         Feed
       </Flex>
+
       <Flex
-        width={{md: '25vw',lg: '34vw'}}
+        display={{md: "none", lg: "flex"}}
+        alignSelf={"stretch"}
       >
-        Highlight
+        <Spacer width={"30px"} />
+        <HighlightCmp />
       </Flex>
     </Flex>
   );

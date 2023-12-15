@@ -12,7 +12,6 @@ import ChakraSpacer from "~/components/ui/ChakraSpacer";
 const HomeMenu = () => {
   return (
     <Flex
-      pl={{base: "0", lg: "30%"}}
       flexDir={'column'}
       pt={''}
     >

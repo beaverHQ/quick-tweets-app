@@ -2,6 +2,7 @@ import { Box, Flex, Text } from "@chakra-ui/react";
 import PostIcon from "./icons/PostIcon";
 import { useState } from "react";
 
+
 const PostBtn = () => {
   const [isHovered, setIsHovered] = useState(false);
   return (
@@ -15,6 +16,8 @@ const PostBtn = () => {
         onMouseOut={() => {
           setIsHovered(false)
         }}
+        // w={'50px'}
+        // h={'50px'}
       >
         <PostIcon isHovered={isHovered} />
       </Box>

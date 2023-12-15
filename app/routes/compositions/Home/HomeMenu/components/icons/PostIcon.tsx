@@ -5,7 +5,7 @@ type PostIconProps = {
 
 const PostIcon = ({ isHovered }: PostIconProps) => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="65" height="65" viewBox="0 0 65 65" fill="none">
+    <svg xmlns="http://www.w3.org/2000/svg" width="58" height="58" viewBox="0 0 65 65" fill="none">
       <g filter="url(#filter0_d_4_2943)">
         <circle cx="32.4241" cy="31.5759" r="28" fill={isHovered ? "rgb(28,155,239, 0.9)" : "#4C9EEB"}/>
       </g>
