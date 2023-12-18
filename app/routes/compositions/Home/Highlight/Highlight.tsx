@@ -2,6 +2,7 @@ import { Flex, Text } from "@chakra-ui/react";
 import HighlightSection from "./components/HighlightSection";
 import Spacer from "~/components/ui/Spacer";
 import SubscribeToPremium from "./components/SubscribeToPremium";
+import TrendList from "./components/TrendList";
 
 
 const HighlightCmp = () => {
@@ -19,7 +20,7 @@ const HighlightCmp = () => {
       <Spacer height={"15px"} />
       <HighlightSection 
         header={"Trends For you"}
-        highlightBody={<></>}
+        highlightBody={<TrendList />}
         showMore={true}
       />
       <Spacer height={"15px"} />
