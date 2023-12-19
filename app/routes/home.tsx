@@ -49,7 +49,8 @@ export default function Index() {
 
       <Flex
         display={{md: "none", lg: "flex"}}
-        alignSelf={"stretch"}
+        // alignSelf={"stretch"}
+        overflow={"auto"}
       >
         <Spacer width={"30px"} />
         <HighlightCmp />

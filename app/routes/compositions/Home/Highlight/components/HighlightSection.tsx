@@ -4,7 +4,7 @@ import Spacer from "~/components/ui/Spacer";
 
 type HighlightSectionProps = {
   header: string;
-  highlightBody: JSX.Element[] | JSX.Element;
+  highlightBody: JSX.Element;
   showMore: boolean;
   showMoreAction?: () => void;
 };
@@ -13,14 +13,14 @@ const HighlightSection = ({ header, highlightBody, showMore }: HighlightSectionP
   return (
     <Flex
       width={"350px"}
-      px={"20px"}
-      py={"12px"}
+      pt={"12px"}
       bgColor={"#16181c"}
       borderRadius={"16px"}
       flexDirection={"column"}
     >
       <Text
         size={"sm"}
+        px={"16px"}
         fontSize={"20px"}
         fontWeight={900}
       >{header}</Text>
@@ -29,9 +29,17 @@ const HighlightSection = ({ header, highlightBody, showMore }: HighlightSectionP
       {
         showMore && <Text
           mt={"5px"}
+          px={"16px"}
+          py={"12px"}
           color={"#1D9BF0"}
           fontSize={"16px"}
           fontWeight={500}
+          _hover={{
+            bgColor: "#1d1f23",
+            cursor: "pointer",
+            borderBottomLeftRadius: "16px",
+            borderBottomRightRadius: "16px",
+          }}
         >Show more</Text>
       }
     </Flex>
