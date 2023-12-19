@@ -4,7 +4,7 @@ import Spacer from "~/components/ui/Spacer";
 
 type HighlightSectionProps = {
   header: string;
-  highlightBody: JSX.Element;
+  highlightBody: JSX.Element[] | JSX.Element;
   showMore: boolean;
   showMoreAction?: () => void;
 };
