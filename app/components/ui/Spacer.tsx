@@ -11,6 +11,7 @@ const Spacer = ({width = "0px", height = "0px", ...props}: SpacerProps) => {
       width={width}
       height={height}
       {...props}
+      // border={"3px solid red"}
     >
     </Box>
   );

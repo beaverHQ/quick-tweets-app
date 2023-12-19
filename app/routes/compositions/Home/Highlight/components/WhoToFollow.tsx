@@ -11,55 +11,45 @@ type WhoToFollowProp = {
 export const WhoToFollow = ({ avatar, fullName, handle }: WhoToFollowProp) => {
 	return (
 		<Flex
-			flexDirection={'row'}
-			w={'100%'}
+			justifyContent={"space-between"}
 			h={'69px'}
-			justifyContent={'space-between'}
 			_hover={{
-				bgColor: '#181919',
-			}}
+        bgColor: "#1d1f23",
+        cursor: "pointer",
+      }}
 			alignItems={'center'}
+			px={"15px"}
 		>
-			<Image
-				src={avatar}
-				alt="avatar image"
-				width={'48px'}
-				height={'48px'}
-				objectFit={'cover'}
-				borderRadius={'50px'}
-				border={'1px solid red'}
-				// justifyContent={'center'}
-				// alignItems={'center'}
-				display={'inline-flex'}
-				overflow={'hidden'}
-			/>
-			<Spacer height={'5px'} />
-			<Flex
-				flexDirection={'column'}
-				justifyContent={'flex-start'}
-				alignItems={'start'}
-
-				pl={'15px'}
-			>
-				<Text color={'white'} fontSize={'16px'} fontWeight={700}>
-					{fullName}
-				</Text>
-				<Text color={'#8899A6'} fontSize={'16px'} fontWeight={500}>
-					{handle}
-				</Text>
+			<Flex>
+				<Image
+					src={avatar}
+					alt="avatar image"
+					width={'48px'}
+					height={'48px'}
+					objectFit={'cover'}
+					borderRadius={'50px'}
+					overflow={'hidden'}
+				/>
+				<Spacer width={'12px'} />
+				<Flex
+					flexDirection={'column'}
+					justifyContent={'flex-start'}
+					alignItems={'start'}
+				>
+					<Text color={'white'} fontSize={'16px'} fontWeight={700}>
+						{fullName}
+					</Text>
+					<Text color={'#8899A6'} fontSize={'16px'} fontWeight={500}>
+						{handle}
+					</Text>
+				</Flex>
+				<Spacer height={'10px'} />
 			</Flex>
-			{/* <Text
-        fontSize={"15px"}
-        lineHeight={"1.3em"}
-        fontWeight={500}
-      >Subscribe to unlock new features.</Text>      */}
-			<Spacer height={'10px'} />
 			<FollowBtn text={'Follow'} />
 		</Flex>
 	);
 };
 
-// export default WhoToFollow;
 
 type FollowBtnProps = {
 	text: string;
@@ -67,14 +57,14 @@ type FollowBtnProps = {
 const FollowBtn = ({ text }: FollowBtnProps) => {
 	return (
 		<Flex
-			w={'107px'}
-			h={'36px'}
-			bgColor={'#0f1419'}
-			// _hover={{
-			// 	bgColor: 'rgb(15,20,25)',
-			// }}
+			w={'78px'}
+			h={'32px'}
+			fontSize={"15px"}
+			fontWeight={700}
 			borderRadius={'50px'}
+			color={'#0f1419'}
 			cursor={'pointer'}
+			bgColor={"#e6e9ea"}
 			alignItems={'center'}
 			justifyContent={'center'}
 		>
@@ -84,24 +74,3 @@ const FollowBtn = ({ text }: FollowBtnProps) => {
 		</Flex>
 	);
 };
-
-export const lists = [
-	{
-		avatarIcon:
-			'https://phoebeonlinesite.files.wordpress.com/2018/06/dxd5vzevmaagw6s-e1529487605376.jpg',
-		name: 'Bessie Cooper',
-		handle: '@alessandroveronezi',
-	},
-	{
-		avatarIcon:
-			'https://phoebeonlinesite.files.wordpress.com/2018/06/dxd5vzevmaagw6s-e1529487605376.jpg',
-		name: 'Jenny Wilson',
-		handle: '@gabrielcantarin',
-	},
-	{
-		avatarIcon:
-			'https://phoebeonlinesite.files.wordpress.com/2018/06/dxd5vzevmaagw6s-e1529487605376.jpg',
-		name: 'Timi Adesina',
-		handle: '@timiadesina',
-	},
-];

@@ -1,4 +1,4 @@
-import { Flex, Text } from "@chakra-ui/react";
+import { Box, Flex, Text } from "@chakra-ui/react";
 import Spacer from "~/components/ui/Spacer";
 
 
@@ -11,9 +11,15 @@ const SubscribeToPremium = () => {
         fontSize={"15px"}
         lineHeight={"1.3em"}
         fontWeight={500}
+        px={"16px"}
       >Subscribe to unlock new features and if eligible, receive a share of ads revenue.</Text>     
       <Spacer height={"10px"} />
-      <SubscribeBtn text={"Subscribe"} />
+      <Box
+        pl={"16px"}
+      >
+        <SubscribeBtn text={"Subscribe"} />
+      </Box>
+      <Spacer height={"10px"} />
     </Flex>
   );
 }
