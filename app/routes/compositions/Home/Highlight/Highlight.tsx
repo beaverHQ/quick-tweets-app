@@ -3,7 +3,7 @@ import HighlightSection from "./components/HighlightSection";
 import Spacer from "~/components/ui/Spacer";
 import SubscribeToPremium from "./components/SubscribeToPremium";
 import TrendList from "./components/TrendList";
-
+import { WhoToFollow, lists } from './components/WhoToFollow';
 
 const HighlightCmp = () => {
   return (
@@ -26,7 +26,18 @@ const HighlightCmp = () => {
       <Spacer height={"15px"} />
       <HighlightSection 
         header={"Who to follow"}
-        highlightBody={<></>}
+				highlightBody={lists.map((item, index) => {
+					return (
+						<>
+							<WhoToFollow
+								key={index}
+								avatar={item.avatarIcon}
+								fullName={item.name}
+								handle={item.handle}
+							/>
+						</>
+					);
+				})}
         showMore={true}
       />
     </Flex>
