@@ -1,8 +1,9 @@
-import { Flex, Text } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import HighlightSection from "./components/HighlightSection";
 import SubscribeToPremium from "./components/SubscribeToPremium";
 import TrendList from "./components/TrendList";
 import WhoToFollowList from './components/WhoToFollowList';
+import { SearchBar } from "./components/SearchBar";
 
 const HighlightCmp = () => {
   return (
@@ -13,7 +14,7 @@ const HighlightCmp = () => {
       overflowY={'auto'}
       gap={"15px"}
     >
-      <Text>Search bar</Text>
+      <SearchBar />
 
       <HighlightSection 
         header={"Subscribe to Premium"}
