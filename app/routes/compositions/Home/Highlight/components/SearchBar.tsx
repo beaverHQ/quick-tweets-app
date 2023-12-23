@@ -1,27 +1,42 @@
-import { Flex, Input, InputGroup, InputLeftElement } from "@chakra-ui/react"
-import ChakraSpacer from "~/components/ui/ChakraSpacer"
+import {  Box, Flex, Input } from "@chakra-ui/react"
+// import ChakraSpacer from "~/components/ui/ChakraSpacer"
 
 
 export const SearchBar = () => {
   return (
     <Flex>
-        <InputGroup>
-            <InputLeftElement pointerEvents='none' mt={"8px"} pl={"15px"}>
-                <SearchBarIcon />
-            </InputLeftElement>
-            <ChakraSpacer  w={"30px"}/>
-            <Input 
-                h={"45px"}
-                variant={"filled"}
-                placeholder='Search' 
-                borderRadius={"25px"} 
-                mt={"5px"}
-                bgColor={"#202327"}
-                _hover={{
-                    bgColor: "#202327"
+            <Box 
+                position={"absolute"}
+                zIndex={"9999"}
+                mt={"22px"}
+                pl={"25px"}
+                _focus={{
+                    border: "1px solid dodgerblue"
                 }}
-            />
-        </InputGroup>
+                
+            >
+             <SearchBarIcon  /> 
+            </Box>
+            
+            <Box>
+                <Input 
+                    h={"45px"}
+                    w={"350px"}
+                    variant={"filled"}
+                    placeholder='Search' 
+                    borderRadius={"25px"} 
+                    mt={"5px"}
+                    pl={"58px"}
+                    bgColor={"#202327"}
+                    _hover={{
+                        bgColor: "#202327"
+                    }}
+                    _focus={{
+                        border: "1px solid dodgerblue",
+                        bgColor: "#000"
+                    }}
+                />
+            </Box>
     </Flex>
   )
 }
