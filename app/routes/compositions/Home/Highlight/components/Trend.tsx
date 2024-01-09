@@ -2,12 +2,13 @@ import {
   Flex, 
   Text, 
   Tooltip,
-  Modal,
-  ModalContent,
-  ModalBody,
-  useDisclosure,
+  // Modal,
+  // ModalContent,
+  // ModalBody,
+  // useDisclosure,
 } from '@chakra-ui/react'
 import React from 'react';
+import Popup, { popupTrigger } from '~/components/ui/Popup';
 
 type TrendProp = {
     topic: string;
@@ -17,95 +18,87 @@ type TrendProp = {
 }
 
 const Trend = ({topic, target, postCount}: TrendProp) => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const finalRef = React.useRef(null)
-  const initialRef = React.useRef(null)
-
   return (
-    <>
-    <Flex
-      py={"10px"}
-      pl={"15px"}
-      pr={"10px"}
-      _hover={{
-        bgColor: "#1d1f23",
-        cursor: "pointer",
-      }}
-      justifyContent={"space-between"}
-    >
-      <Flex 
-        flexDirection={"column"}
-        >
-          <Text 
-            fontSize={"14px"}
-            color={"hsl(210,5%,50%)"}
-          >
-            {topic}
-          </Text>
-
-          <Text
-            fontSize={"14px"}
-            fontWeight={700}
-            color={"#e6e9ea"}
-          >
-          {target}
-          </Text>
-
-          <Text
-            fontSize={"12px"}
-            color={"hsl(210,5%,50%)"}
-          >
-            {postCount}
-          </Text>
-      </Flex >
-      <Tooltip 
-        label="More" 
-        fontSize="10px" 
-        fontWeight={700}
-        color={"white"} 
-        bgColor={"#4e616f"}
-        // width={"max-content"}
-        py={"3px"}
-        px={"5px"}
-      >
+    <Popup 
+      onRequestClose={() => {}}
+      triggerCmp={
         <Flex
-          w={'30px'}
-          h={'30px'}
-          borderRadius={"50px"}
-          color={"hsl(210,5%,50%)"}
-          alignItems={"center"}
-          justifyContent={"center"}
+          py={"10px"}
+          pl={"15px"}
+          pr={"10px"}
           _hover={{
-            borderRadius: "50px",
-            bgColor: "rgb(28,155,239, 0.1)",
-            color: "rgb(28,155,239, 0.9)",
+            bgColor: "#1d1f23",
+            cursor: "pointer",
           }}
-          >
-          <Text
-            fontSize={'20px'}
-            fontWeight={500}
-            textAlign={"center"}
-            onClick={onOpen}
-            ref={finalRef} 
-            tabIndex={-1}
-          >
-            ···
-          </Text>
-        </Flex>
-      </Tooltip>
-    </Flex>
+          justifyContent={"space-between"}
+        >
+          <Flex 
+            flexDirection={"column"}
+            >
+              <Text 
+                fontSize={"14px"}
+                color={"hsl(210,5%,50%)"}
+              >
+                {topic}
+              </Text>
 
-    <Modal isOpen={isOpen} onClose={onClose} initialFocusRef={initialRef} finalFocusRef={finalRef}>
-      <ModalContent 
-        bgColor={"#000"} 
-        borderRadius={"10px"} 
-        w={"294px"}
-        boxShadow={"xl"}
-        >
-        <ModalBody
-         p={"5px"}
-        >
-          <Flex direction={"column"}>
+              <Text
+                fontSize={"14px"}
+                fontWeight={700}
+                color={"#e6e9ea"}
+              >
+              {target}
+              </Text>
+
+              <Text
+                fontSize={"12px"}
+                color={"hsl(210,5%,50%)"}
+              >
+                {postCount}
+              </Text>
+          </Flex >
+          <Tooltip 
+            label="More" 
+            fontSize="10px" 
+            fontWeight={700}
+            color={"white"} 
+            bgColor={"#4e616f"}
+            // width={"max-content"}
+            py={"3px"}
+            px={"5px"}
+          >
+            <Flex
+              w={'30px'}
+              h={'30px'}
+              borderRadius={"50px"}
+              color={"hsl(210,5%,50%)"}
+              alignItems={"center"}
+              justifyContent={"center"}
+              _hover={{
+                borderRadius: "50px",
+                bgColor: "rgb(28,155,239, 0.1)",
+                color: "rgb(28,155,239, 0.9)",
+              }}
+              >
+              <Text
+                fontSize={'20px'}
+                fontWeight={500}
+                textAlign={"center"}
+                onClick={popupTrigger}
+                // ref={finalRef} 
+                tabIndex={-1}
+              >
+                ···
+              </Text>
+            </Flex>
+          </Tooltip>
+        </Flex>
+      }
+      contentCmp={
+          <Flex 
+            direction={"column"}
+            p={"5px"}
+          >
             <Flex>
               <Emoji /> <Text pl={"10px"} fontWeight={700} fontSize={"15px"}>Not interested in this</Text>
             </Flex>
@@ -113,11 +106,8 @@ const Trend = ({topic, target, postCount}: TrendProp) => {
               <Emoji /> <Text pl={"10px"} fontWeight={700} fontSize={"15px"}>This trend is harmful or spammy</Text>
             </Flex>
           </Flex>
-        </ModalBody>
-      </ModalContent>
-    </Modal>
-</>
-
+      }
+    />
   )
 }
 
@@ -125,7 +115,6 @@ export default Trend;
 
 
 const Emoji = () => {
-
     return (
         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
             <path d="M11 21.75C5.072 21.75 0.25 16.928 0.25 11C0.25 5.072 5.072 0.25 11 0.25C16.928 0.25 21.75 5.072 21.75 11C21.75 16.928 16.928 21.75 11 21.75ZM11 1.75C5.9 1.75 1.75 5.9 1.75 11C1.75 16.1 5.9 20.25 11 20.25C16.1 20.25 20.25 16.1 20.25 11C20.25 5.9 16.1 1.75 11 1.75Z" fill="#1DA1F2"/>
@@ -136,3 +125,16 @@ const Emoji = () => {
     )
     
 }
+
+// <Popup 
+//   triggerCmp={(
+//     <Button
+//       onClick={popupTrigger}
+//     >
+
+//     </Button>
+//   )}
+//   contentCmp={(
+//     <div></div>
+//   )}
+// />
