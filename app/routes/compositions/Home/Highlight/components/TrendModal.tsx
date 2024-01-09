@@ -1,25 +1,49 @@
-// import {
-//     Flex,
-//     Modal,
-//     ModalOverlay,
-//     ModalContent,
-//     ModalHeader,
-//     ModalFooter,
-//     ModalBody,
-//     ModalCloseButton,
-//   } from '@chakra-ui/react'
+import {
+    Flex,
+    Modal,
+    ModalOverlay,
+    ModalContent,
+    ModalHeader,
+    ModalFooter,
+    ModalBody,
+    ModalCloseButton,
+    Button,
+    useDisclosure
+  } from '@chakra-ui/react'
 
 // type TrendModalProp = {
 //     onClick: () => void;
 // }
 
-// export const TrendModal = ({}) => {
-//   return (
-//     <Flex>
+export const TrendModal = () => {
+    const { isOpen, onOpen, onClose } = useDisclosure();
+    
+  return (
+    <Flex w={"200px"} h={"50px"} bgColor={"#fff"}>
+        <Button onClick={onOpen}>Open Modal</Button>
+            <Modal isOpen={isOpen} onClose={onClose}>
+            <ModalOverlay />
+            <ModalContent>
+                <ModalHeader>Modal Title</ModalHeader>
+                <ModalCloseButton />
+                <ModalBody>
+                Sit nulla est ex deserunt exercitation anim occaecat. 
+                Nostrud ullamco deserunt aute id consequat veniam
+                incididunt duis in sint irure nisi. Mollit officia 
+                cillum Lorem ullamco minim nostrud elit officia tempor esse quis.
+                </ModalBody>
 
-//     </Flex>
-//   )
-// }
+                <ModalFooter>
+                <Button colorScheme='blue' mr={3} onClick={onClose}>
+                    Close
+                </Button>
+                <Button variant='ghost'>Secondary Action</Button>
+                </ModalFooter>
+            </ModalContent>
+            </Modal>
+    </Flex>
+  )
+}
 
 // const Emoji = () => {
 
